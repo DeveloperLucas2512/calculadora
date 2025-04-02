@@ -1,27 +1,29 @@
 var novoCalculo = false;
 
-
-function insert(num){
-
+function insert(num) {
     var resultado = document.getElementById('resultado');
 
-    if(novoCalculo){
-        resultado.innerHTML = num; //substitui o resultado anterior
-        novoCalculo = false; // reseta a variavel para permitir novas inserçoes
+    if (novoCalculo) {
+        // Se o novo input for um operador, continuar o cálculo
+        if (num === '+' || num === '-' || num === '*' || num === '/') {
+            resultado.innerHTML += num;
+        } else {
+            resultado.innerHTML = num; // Se for um número, substitui o resultado anterior
+        }
+        novoCalculo = false;
     } else {
         resultado.innerHTML += num;
     }
-
 }
 
-function clean(){
+function clean() {
     document.getElementById('resultado').innerHTML = '';
     novoCalculo = false;
 }
 
-function back(){
+function back() {
     var resultado = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = resultado.substring(0,resultado.length -1);
+    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
 }
 
 function calcular() {
@@ -29,13 +31,11 @@ function calcular() {
     if (resultado) {
         try {
             document.getElementById('resultado').innerHTML = eval(resultado);
-            novoCalculo = true; // Ativa a flag para limpar na próxima inserção
+            novoCalculo = true; // Agora ativa a flag para reiniciar o cálculo corretamente
         } catch (e) {
             document.getElementById('resultado').innerHTML = "Erro";
         }
     } else {
-        document.getElementById('resultado').innerHTML = 'sem função';
+        document.getElementById('resultado').innerHTML = 'Sem função';
     }
 }
-
-
