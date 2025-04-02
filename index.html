@@ -9,41 +9,42 @@
 <body>
     <div class="fundo">
         <h1>Lucas Dias Developer</h1>
+        <br>
         <div class="calculadora">
-            <h1>Calculadora</h1>
+            <h3>Calculadora</h3>
             <p id="resultado"></p>
             <table>
                 <tr>
-                    <td><button>C</button></td>
-                    <td><button><</button></td>
-                    <td><button>/</button></td>
-                    <td><button>X</button></td>
+                    <td><button class="botao-generico" onclick="clean()">C</button></td>
+                    <td><button class="botao-generico" onclick="back()"><</button></td>
+                    <td><button class="botao-generico" onclick="insert('/')">/</button></td>
+                    <td><button class="botao-generico" onclick="insert('*')">X</button></td>
                 </tr>
 
                 <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>8</button></td>
-                    <td><button>-</button></td>
+                    <td><button class="botao-generico" onclick="insert('7')">7</button></td>
+                    <td><button class="botao-generico" onclick="insert('8')">8</button></td>
+                    <td><button class="botao-generico" onclick="insert('9')">9</button></td>
+                    <td><button class="botao-generico" onclick="insert('-')">-</button></td>
                 </tr>
 
                 <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button>+</button></td>
+                    <td><button class="botao-generico" onclick="insert('4')">4</button></td>
+                    <td><button class="botao-generico" onclick="insert('5')">5</button></td>
+                    <td><button class="botao-generico" onclick="insert('6')">6</button></td>
+                    <td><button class="botao-generico" onclick="insert('+')">+</button></td>
                 </tr>
 
                 <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td rowspan="2"><button>=</button></td>
+                    <td><button class="botao-generico" onclick="insert('1')">1</button></td>
+                    <td><button class="botao-generico" onclick="insert('2')">2</button></td>
+                    <td><button class="botao-generico" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="botao-generico botao-igual" onclick="calcular()">=</button></td>
                 </tr>
 
                 <tr>
-                    <td colspan="2"><button>0</button></td>
-                    <td><button>.</button></td>                    
+                    <td colspan="2"><button class="botao-generico botao-zero" onclick="insert('0')">0</button></td>
+                    <td><button class="botao-generico" onclick="insert('.')">.</button></td>                    
                 </tr>
 
               
@@ -51,5 +52,8 @@
             </table> 
         </div>
     </div>
+
+    <script src="scripts.js" defer></script>
+
 </body>
 </html>
