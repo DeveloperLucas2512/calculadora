@@ -4,11 +4,10 @@ function insert(num) {
     var resultado = document.getElementById('resultado');
 
     if (novoCalculo) {
-        // Se o novo input for um operador, continuar o cálculo
         if (num === '+' || num === '-' || num === '*' || num === '/') {
-            resultado.innerHTML += num;
+            resultado.innerHTML += num; // Permite continuar operação
         } else {
-            resultado.innerHTML = num; // Se for um número, substitui o resultado anterior
+            resultado.innerHTML = num; // Substitui pelo novo número
         }
         novoCalculo = false;
     } else {
@@ -31,7 +30,7 @@ function calcular() {
     if (resultado) {
         try {
             document.getElementById('resultado').innerHTML = eval(resultado);
-            novoCalculo = true; // Agora ativa a flag para reiniciar o cálculo corretamente
+            novoCalculo = true; // Ativa flag para reiniciar ou continuar cálculo
         } catch (e) {
             document.getElementById('resultado').innerHTML = "Erro";
         }
